@@ -530,7 +530,7 @@ class Data:
         cur.execute(query, {'min_duration': self.min_duration})
         ret = cur.fetchall()
         for row in ret:
-            row[8] = re.sub(".*/\* (file=.*)\*/", "\\1", row[8])
+            row[8] = re.sub(".*/\* (file=.*)\*/.*", "\\1", row[8])
 
         return ret
 
